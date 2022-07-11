@@ -1,0 +1,7 @@
+.idea
+*.tfstate
+*.tfstate.backup
+*.terraform.lock.hcl
+kubeconfig_dev-buyk
+.terraform
+.DS_Store
