@@ -14,7 +14,7 @@ env:
   ECR_REPOSITORY: "app-registry"           # set this to your Amazon ECR repository name
   CONTAINER_NAME: "app-registry"
   IMAGE_TAG: ${{ github.sha }}
-  $ECR_REGISTRY: "771840051868.dkr.ecr.eu-west-2.amazonaws.com"
+  ECR_REGISTRY: "771840051868.dkr.ecr.eu-west-2.amazonaws.com"
 
 jobs:
   ci:
