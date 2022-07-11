@@ -76,10 +76,10 @@ jobs:
 
       - name: Plan Terraform
         run: |
-          terraform -chdir=terraform-ecs/ecs/ plan -input=false -no-color -var="image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+          terraform -chdir=terraform-ecs/ecs/ plan -input=false -no-color -var="image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" -lock=false
 
       - name: Apply Terraform
         id: apply
         continue-on-error: true
         run: |
-          terraform -chdir=terraform-ecs/ecs/ apply -input=false -no-color -var="image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+          terraform -chdir=terraform-ecs/ecs/ apply -input=false -no-color -var="image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" -lock=false
