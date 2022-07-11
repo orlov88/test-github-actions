@@ -4,10 +4,10 @@ name: "ci-cd test task"
   workflow_dispatch:
   push:
     branches:
-      - main
+      - master
   pull_request:
     branches:
-      - main
+      - master
 
 env:
   AWS_REGION: "eu-west-2"                  # set this to your preferred AWS region, e.g. us-west-1
@@ -82,4 +82,4 @@ jobs:
         id: apply
         continue-on-error: true
         run: |
-          terraform -chdir=terraform-ecs/ecs/ apply -input=false -no-color -var="image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" -lock=false
+          terraform -chdir=terraform-ecs/ecs/ apply -auto-approve -input=false -no-color -var="image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" -lock=false
